@@ -1,0 +1,12 @@
+```
+library(gplots)
+dat<-matrix(rnorm(200),20,10)
+colnames(dat)<-paste("Sample",1:10,sep="_")
+rownames(dat)<-paste("Gene",1:20,sep="")
+cc<-cor(dat)
+dd<-1-as.dist(cc)
+hc<-hclust(dd)
+heatmap.3<-function(){
+}
+```
+To be continued ......
