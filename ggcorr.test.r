@@ -1,8 +1,7 @@
 ggcorr.test<-function(data,method ="pearson",use="complete.obs",cor_matrix = NULL,
-                      nbreaks = NULL, digits = 2, name = "", low = "#3B9AB2", mid = "#EEEEEE", 
-                      high = "#F21A00", midpoint = 0, palette = NULL, 
-                      label = FALSE,label.sep="\n",pvalue=FALSE,star=TRUE,label_color = "black", 
-                      label_size = 2.5,legend.position = "right", legend.size = 9,upper=FALSE,xangle=0,...)
+                      low = "#3B9AB2", mid = "#EEEEEE", 
+                      high = "#F21A00", midpoint = 0, label = FALSE,label.sep="\n",pvalue=FALSE,star=TRUE,label_color = "black", 
+                      label_size = 2.5,upper=FALSE,xangle=0,...)
 {
   if (!is.null(data)) {
     if (!is.data.frame(data)) {
