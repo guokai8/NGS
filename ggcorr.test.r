@@ -67,7 +67,6 @@ ggcorr.test<-function(data,method ="pearson",use="complete.obs",cor_matrix = NUL
   }
   p
 }
-
 .cor_test<-function(x, y, method = "pearson",use = "complete.obs", label.sep = ", ", output.type = "expression"){
   require(tidyverse)
   .cor <- stats::cor.test(x, y, method = method, exact = FALSE, use = use)
