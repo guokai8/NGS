@@ -1,7 +1,8 @@
 ggcorr.test<-function(data,method ="pearson",use="complete.obs",cor_matrix = NULL,
-                      low = "#3B9AB2", mid = "#EEEEEE", 
-                      high = "#F21A00", midpoint = 0, label = FALSE,label.sep="\n",pvalue=FALSE,star=TRUE,label_color = "black", 
-                      label_size = 2.5,upper=FALSE,xangle=0,...)
+                       low = "#3B9AB2", mid = "#EEEEEE", 
+                      high = "#F21A00", midpoint = 0,  
+                      label = FALSE,label.sep="\n",pvalue=FALSE,star=TRUE,label_color = "black", 
+                      label_size = 2.5,upper=FALSE,xangle=0,name.size=12,...)
 {
   if (!is.null(data)) {
     if (!is.data.frame(data)) {
@@ -60,12 +61,13 @@ ggcorr.test<-function(data,method ="pearson",use="complete.obs",cor_matrix = NUL
   panel.background = element_blank(),
   axis.ticks = element_blank())+xlab("")+ylab("")
   if(upper==TRUE){
-    p<-p+scale_x_discrete(position = "top")+theme(axis.text.x=element_text(angle=xangle,vjust=-0.1,hjust=0))
+    p<-p+scale_x_discrete(position = "top")+theme(axis.text.x=element_text(angle=xangle,vjust=-0.1,hjust=0,size=name.size))
   }else{
-    p<-p+scale_y_discrete(position = "right")+theme(axis.text.x=element_text(angle=xangle,vjust=1,hjust=1))
+    p<-p+scale_y_discrete(position = "right")+theme(axis.text.x=element_text(angle=xangle,vjust=1,hjust=1,size=name.size))
   }
-  p
+  p+theme(axis.text.y=element_text(size=name.size))
 }
+
 .cor_test<-function(x, y, method = "pearson",use = "complete.obs", label.sep = ", ", output.type = "expression"){
   require(tidyverse)
   .cor <- stats::cor.test(x, y, method = method, exact = FALSE, use = use)
